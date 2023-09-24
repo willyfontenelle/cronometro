@@ -7,7 +7,7 @@ class App extends Component{
         super(props);
         this.state = {
             numero: 0,
-            botao: 'VAI'
+            botao: 'Iniciar'
         };
 
 
@@ -22,14 +22,14 @@ class App extends Component{
         if(this.timer !== null){
             clearInterval(this.timer);
             this.timer = null;
-            state.botao = 'VAI';
+            state.botao = 'Iniciar';
         }else{
             this.timer = setInterval(()=>{
                 let state = this.state;
                 state.numero += 0.1;
                 this.setState(state);
             },100);
-            state.botao = 'PAUSAR';
+            state.botao = 'Pausar';
         }
 
         this.setState(state);
@@ -43,7 +43,7 @@ class App extends Component{
 
         let state = this.state;
         state.numero = 0;
-        state.botao = 'VAI';
+        state.botao = 'vai';
         this.setState(state);
 
     }
@@ -55,7 +55,7 @@ class App extends Component{
                 <a className="timer">{this.state.numero.toFixed(1)}</a>
                 <div className='areaBtn'>
                     <a className='botao' onClick={this.vai}>{this.state.botao}</a>
-                    <a className='botao'onClick={this.limpar}>LIMPAR</a>
+                    <a className='botao'onClick={this.limpar}>Limpar</a>
                 </div>
             </div>
         )
